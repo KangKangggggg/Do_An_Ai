@@ -2,6 +2,7 @@ import pygame
 import sys
 import random
 import copy
+import time
 import math
 
 # Khởi tạo pygame
@@ -46,6 +47,7 @@ class KeoCandy:
         self.loai = loai  # Màu sắc của kẹo (0-5)
         self.dac_biet = dac_biet  # Loại kẹo đặc biệt
         self.dang_xoa = False  # Đánh dấu kẹo đang bị xóa (để hiệu ứng)
+        self.hieu_ung_dem = 0  # Bộ đếm cho hiệu ứng
 
 class BangCandyCrush:
     def __init__(self):
@@ -566,7 +568,6 @@ def main():
         screen.fill(XAM)
         
         # Vẽ bảng
-                # Vẽ bảng
         for hang in range(KICH_THUOC_LUOI):
             for cot in range(KICH_THUOC_LUOI):
                 # Vẽ ô
@@ -617,7 +618,7 @@ def main():
                             pygame.draw.polygon(screen, color, [
                                 (x + KICH_THUOC_O // 2, y + KICH_THUOC_O // 2),
                                 (x + KICH_THUOC_O // 2 + int((KICH_THUOC_O // 2 - 5) * math.cos(angle)), 
-                                 y + KICH_THUC_O // 2 + int((KICH_THUOC_O // 2 - 5) * math.sin(angle))),
+                                 y + KICH_THUOC_O // 2 + int((KICH_THUOC_O // 2 - 5) * math.sin(angle))),
                                 (x + KICH_THUOC_O // 2 + int((KICH_THUOC_O // 2 - 5) * math.cos(angle + math.pi / 3)), 
                                  y + KICH_THUOC_O // 2 + int((KICH_THUOC_O // 2 - 5) * math.sin(angle + math.pi / 3)))
                             ])
