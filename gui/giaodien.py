@@ -352,6 +352,30 @@ class CandyCrushGame:
                 candy_img = AssetManager.load_image(candy_type, 0.4)
                 self.candy_images.append(candy_img)
             
+            # Tải hình ảnh kẹo tùy chỉnh
+            try:
+                # Tải kẹo bom màu
+                color_bomb_img = AssetManager.load_image('colour_bomb.png', 0.4)
+                if color_bomb_img:
+                    self.special_candy_images['color_bomb'] = color_bomb_img
+                    print("Loaded color bomb image successfully")
+                
+                # Tải kẹo đỏ
+                red_candy_img = AssetManager.load_image('red_candy.png', 0.4)
+                if red_candy_img and len(self.candy_images) > 0:
+                    # Thay thế kẹo đỏ đầu tiên
+                    self.candy_images[0] = red_candy_img
+                    print("Loaded red candy image successfully")
+                
+                # Tải kẹo sọc
+                striped_candy_img = AssetManager.load_image('striped_candy.png', 0.4)
+                if striped_candy_img and len(self.special_candy_images['striped_horizontal']) > 0:
+                    # Thay thế kẹo sọc ngang đầu tiên
+                    self.special_candy_images['striped_horizontal'][0] = striped_candy_img
+                    print("Loaded striped candy image successfully")
+            except Exception as e:
+                print(f"Error loading custom candy images: {e}")
+            
             # Tải hình ảnh kẹo đặc biệt
             self.special_candy_images = {
                 'striped_horizontal': [],
@@ -546,6 +570,25 @@ class CandyCrushGame:
         while self.find_matches(False):
             self.remove_matches()
             self.fill_board()
+            
+        # Đảm bảo không có ô trống sau khi khởi tạo
+        self.ensure_no_empty_cells()
+    
+    def ensure_no_empty_cells(self) -> None:
+        """Đảm bảo không có ô trống trên bảng"""
+        if not self.candy_images or len(self.candy_images) == 0:
+            num_candy_types = 6
+        else:
+            num_candy_types = len(self.candy_images)
+            
+        for y in range(BOARD_SIZE):
+            for x in range(BOARD_SIZE):
+                if self.board[y][x]['type'] == -1:
+                    # Nếu phát hiện ô trống, điền kẹo mới
+                    self.board[y][x] = {
+                        'type': random.randint(0, num_candy_types-1),
+                        'special': None
+                    }
     
     def draw(self) -> None:
         """Vẽ toàn bộ game"""
@@ -1020,6 +1063,9 @@ class CandyCrushGame:
                     'special': None
                 }
                 self.animation.add_animation((x, y - len(empty_cells)), (x, y), self.board[y][x]['type'])
+        
+        # Kiểm tra lại một lần nữa để đảm bảo không có ô trống
+        self.ensure_no_empty_cells()
     
     def process_matches(self) -> None:
         """Xử lý tất cả các kẹo khớp"""
@@ -1028,6 +1074,9 @@ class CandyCrushGame:
             if not self.find_matches(False):
                 break
             self.fill_board()
+        
+        # Đảm bảo không có ô trống sau khi xử lý
+        self.ensure_no_empty_cells()
         
         # Kiểm tra điều kiện thắng/thua
         if self.score >= self.target_score:
@@ -1326,6 +1375,9 @@ class CandyCrushGame:
                 break
             self.fill_board()
         
+        # Đảm bảo không có ô trống sau khi xử lý
+        self.ensure_no_empty_cells()
+        
         # Kiểm tra điều kiện thắng/thua
         if self.score >= self.target_score:
             self.game_state = "LEVEL_COMPLETE"
@@ -1389,3 +1441,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
