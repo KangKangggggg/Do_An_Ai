@@ -30,7 +30,7 @@ class CandyType(enum.Enum):
     GREEN = 1
     BLUE = 2
     YELLOW = 3
-    PURPLE = 4
+    VIOLET = 4
     ORANGE = 5
 
 # Loại kẹo đặc biệt

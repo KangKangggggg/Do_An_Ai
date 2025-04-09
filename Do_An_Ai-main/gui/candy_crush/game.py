@@ -16,7 +16,7 @@ class CandyCrushGame:
         self.ui = UI(self.screen)
         
         # Khởi tạo biến trò chơi
-        self.state = GameState.PLAYING
+        self.state = GameState.MENU  # Bắt đầu với trạng thái MENU
         self.level_number = 1
         self.score = 0
         self.moves_left = 35
@@ -61,25 +61,26 @@ class CandyCrushGame:
                         running = False
                     elif event.key == pygame.K_SPACE:
                         # Thêm xử lý phím Space để chuyển cấp độ
-                        self.next_level()
-                
-                # Xử lý sự kiện chuột khi đang chơi
-                if self.state == GameState.PLAYING and not self.waiting_for_animations:
-                    if event.type == pygame.MOUSEBUTTONDOWN:
-                        self.handle_mouse_click()
-            
+                        if self.state == GameState.PLAYING:
+                            self.next_level()
+                        elif self.state == GameState.MENU:
+                            self.state = GameState.PLAYING
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    self.handle_mouse_click()
+        
             # Cập nhật trạng thái trò chơi
-            self.update()
-            
+            if self.state == GameState.PLAYING:
+                self.update()
+        
             # Vẽ trò chơi
             self.draw()
-            
+        
             # Cập nhật màn hình
             pygame.display.flip()
-            
+        
             # Giới hạn FPS
             self.clock.tick(60)
-        
+    
         pygame.quit()
         sys.exit()
     
@@ -187,32 +188,58 @@ class CandyCrushGame:
         # Xử lý sự kiện click chuột
         mouse_pos = pygame.mouse.get_pos()
         
-        # Chuyển đổi vị trí chuột thành tọa độ lưới
-        col = (mouse_pos[0] - GRID_OFFSET_X) // CELL_SIZE
-        row = (mouse_pos[1] - GRID_OFFSET_Y) // CELL_SIZE
+        # Kiểm tra xem có click vào nút play không
+        if self.ui.play_button_rect.collidepoint(mouse_pos):
+            if self.state == GameState.MENU:
+                # Bắt đầu trò chơi nếu đang ở màn hình menu
+                self.state = GameState.PLAYING
+                # Đặt lại các biến trò chơi khi bắt đầu mới
+                self.level_number = 1
+                self.score = 0
+                self.moves_left = 35
+                self.target_score = 600
+                # Đặt lại bảng
+                self.board = [[None for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]
+                self.fill_board()
+            elif self.state == GameState.LEVEL_COMPLETE or self.state == GameState.GAME_OVER:
+                # Bắt đầu cấp độ mới nếu đã hoàn thành hoặc thua
+                self.next_level()
+            return
         
-        # Kiểm tra xem click có nằm trong lưới không
-        if 0 <= row < GRID_SIZE and 0 <= col < GRID_SIZE:
-            # Nếu chưa có ô nào được chọn
-            if self.selected_row == -1 and self.selected_col == -1:
-                self.selected_row = row
-                self.selected_col = col
-            else:
-                # Nếu đã có ô được chọn, kiểm tra xem ô mới có kề với ô đã chọn không
-                if ((abs(row - self.selected_row) == 1 and col == self.selected_col) or
-                    (abs(col - self.selected_col) == 1 and row == self.selected_row)):
-                    # Hoán đổi hai kẹo
-                    self.swap_candies(self.selected_row, self.selected_col, row, col)
-                    self.swap_row1 = self.selected_row
-                    self.swap_col1 = self.selected_col
-                    self.swap_row2 = row
-                    self.swap_col2 = col
-                    self.swapping = True
-                    self.swap_start_time = time.time()
-                
-                # Bỏ chọn ô hiện tại
-                self.selected_row = -1
-                self.selected_col = -1
+        # Kiểm tra xem có click vào nút cài đặt không
+        if self.ui.settings_rect.collidepoint(mouse_pos):
+            # Xử lý khi click vào nút cài đặt (có thể thêm sau)
+            print("Settings button clicked")
+            return
+        
+        # Chỉ xử lý click vào lưới nếu đang trong trạng thái PLAYING
+        if self.state == GameState.PLAYING:
+            # Chuyển đổi vị trí chuột thành tọa độ lưới
+            col = (mouse_pos[0] - GRID_OFFSET_X) // CELL_SIZE
+            row = (mouse_pos[1] - GRID_OFFSET_Y) // CELL_SIZE
+        
+            # Kiểm tra xem click có nằm trong lưới không
+            if 0 <= row < GRID_SIZE and 0 <= col < GRID_SIZE:
+                # Nếu chưa có ô nào được chọn
+                if self.selected_row == -1 and self.selected_col == -1:
+                    self.selected_row = row
+                    self.selected_col = col
+                else:
+                    # Nếu đã có ô được chọn, kiểm tra xem ô mới có kề với ô đã chọn không
+                    if ((abs(row - self.selected_row) == 1 and col == self.selected_col) or
+                        (abs(col - self.selected_col) == 1 and row == self.selected_row)):
+                        # Hoán đổi hai kẹo
+                        self.swap_candies(self.selected_row, self.selected_col, row, col)
+                        self.swap_row1 = self.selected_row
+                        self.swap_col1 = self.selected_col
+                        self.swap_row2 = row
+                        self.swap_col2 = col
+                        self.swapping = True
+                        self.swap_start_time = time.time()
+                    
+                    # Bỏ chọn ô hiện tại
+                    self.selected_row = -1
+                    self.selected_col = -1
     
     def swap_candies(self, row1, col1, row2, col2):
         # Hoán đổi hai kẹo
@@ -389,37 +416,44 @@ class CandyCrushGame:
         # Vẽ nền
         self.screen.fill(WHITE)
         
-        # Vẽ lưới
-        self.ui.draw_grid()
+        # Cập nhật trạng thái game cho UI
+        self.ui.game_state = self.state
         
-        # Vẽ các kẹo
-        for row in range(GRID_SIZE):
-            for col in range(GRID_SIZE):
-                if self.board[row][col]:
-                    self.board[row][col].draw(self.screen)
+        if self.state == GameState.MENU:
+            # Vẽ màn hình menu
+            self.ui.draw_menu()
+        else:
+            # Vẽ lưới
+            self.ui.draw_grid()
         
-        # Vẽ ô được chọn
-        if self.selected_row >= 0 and self.selected_col >= 0:
-            self.ui.draw_selection(self.selected_row, self.selected_col)
+            # Vẽ các kẹo
+            for row in range(GRID_SIZE):
+                for col in range(GRID_SIZE):
+                    if self.board[row][col]:
+                        self.board[row][col].draw(self.screen)
         
-        # Vẽ thông tin cấp độ
-        self.ui.draw_level_info(
-            self.level_number, 
-            self.score, 
-            self.moves_left, 
-            self.level_type, 
-            self.target_score,
-            self.jellies_left,
-            self.ingredients_left,
-            self.chocolates_left,
-            self.blockers_count
-        )
+            # Vẽ ô được chọn
+            if self.selected_row >= 0 and self.selected_col >= 0:
+                self.ui.draw_selection(self.selected_row, self.selected_col)
         
-        # Vẽ thông báo khi kết thúc trò chơi
-        if self.state == GameState.GAME_OVER:
-            self.ui.draw_message("Trò Chơi Kết Thúc", "Nhấn SPACE để chơi cấp độ tiếp theo hoặc ESC để thoát")
-        elif self.state == GameState.LEVEL_COMPLETE:
-            self.ui.draw_message("Hoàn Thành Cấp Độ!", "Nhấn SPACE để chơi cấp độ tiếp theo hoặc ESC để thoát")
+            # Vẽ thông tin cấp độ
+            self.ui.draw_level_info(
+                self.level_number, 
+                self.score, 
+                self.moves_left, 
+                self.level_type, 
+                self.target_score,
+                self.jellies_left,
+                self.ingredients_left,
+                self.chocolates_left,
+                self.blockers_count
+            )
+        
+            # Vẽ thông báo khi kết thúc trò chơi
+            if self.state == GameState.GAME_OVER:
+                self.ui.draw_message("Trò Chơi Kết Thúc", "Nhấn SPACE để chơi cấp độ tiếp theo hoặc ESC để thoát")
+            elif self.state == GameState.LEVEL_COMPLETE:
+                self.ui.draw_message("Hoàn Thành Cấp Độ!", "Nhấn SPACE để chơi cấp độ tiếp theo hoặc ESC để thoát")
     
     def check_level_completion(self):
         # Kiểm tra điều kiện hoàn thành cấp độ
