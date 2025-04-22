@@ -589,7 +589,8 @@ class CandyCrushGame:
                         'type': random.randint(0, num_candy_types-1),
                         'special': None
                     }
-    
+
+# Các phần trang trí
     def draw(self) -> None:
         """Vẽ toàn bộ game"""
         # Vẽ nền
