@@ -40,8 +40,8 @@ Chạy trò chơi: python main.py.
 Tác giả: 
 		
 STT	HỌ VÀ TÊN            	MSSV
-1	  Huỳnh Tấn Vinh       	23110365
+1       Huỳnh Tấn Vinh       	23110365
 2 	Nguyễn Phạm Bảo Trân	23110348
-3	  Nguyễn Thị Kim Oanh  	23110372
+3       Nguyễn Thị Kim Oanh  	23110372
 
 
