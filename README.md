@@ -1,6 +1,8 @@
 # Do_An_Ai
 Giới Thiệu
 Candy Crush là một trò chơi match-3 được phát triển bằng Python và Pygame, nơi người chơi hoán đổi các viên kẹo để tạo chuỗi 3+ viên cùng loại, ghi điểm và hoàn thành mục tiêu của từng cấp độ. Dự án bao gồm giao diện người dùng (UI) thân thiện, các cấp độ đa dạng, và thuật toán AI hỗ trợ gợi ý nước đi tối ưu.
+![image](https://github.com/user-attachments/assets/c3eeb993-61a4-4b8a-9f1e-db4922235cbc)
+
 
 Tính Năng Chính
 Giao diện người dùng:
@@ -10,6 +12,8 @@ Cấp độ chơi:
 Level 1: Đạt 800 điểm (20 lượt).
 Level 2: Phá 8 kẹo dẻo (30 lượt).
 Level 3: Đạt 1200 điểm (15 lượt).
+![image](https://github.com/user-attachments/assets/6ef23999-f2b8-401c-96e1-f96859022956)
+
 Tùy chỉnh cài đặt: Âm lượng, nhạc nền, rung, chế độ AI (A*, Hill Climbing, Hybrid), chế độ chơi (Auto Play, Free Movement).
 Thuật Toán AI
 AI hỗ trợ tìm nước đi tối ưu thông qua các thuật toán sau:
@@ -21,6 +25,8 @@ Simulated Annealing: Thoát cực trị cục bộ, khám phá nước đi đa d
 Q-learning: Học hỏi từ trải nghiệm, cải thiện nước đi qua thời gian.
 AND-OR: Xử lý nhiều mục tiêu (phá kẹo dẻo, thu thập nguyên liệu).
 Hybrid: Kết hợp A* và Simulated Annealing để cân bằng hiệu suất và khám phá, trả về nước đi tối ưu.
+![image](https://github.com/user-attachments/assets/bab7e06d-a27c-4d38-aa0e-ab2b0e188632)
+
 
 Cách Chơi
 Hoán đổi kẹo để tạo chuỗi 3+ viên cùng loại, ghi 10 điểm/viên.
