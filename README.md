@@ -79,6 +79,8 @@ Mô tả: Thuật toán này tìm kiếm nước đi bằng cách cân bằng gi
 
 Ứng dụng: Hiệu quả trong việc tìm kiếm các nước đi tối ưu trong không gian trạng thái lớn của bảng kẹo.
 
+https://github.com/user-attachments/assets/41a3a09d-f1f0-4d34-8f9d-779788c99204
+
 
 **BFS Search (Breadth-First Search)**
 
@@ -87,6 +89,8 @@ Loại: Tìm kiếm không có thông tin (Uninformed Search).
 Mô tả: BFS khám phá tất cả các nước đi có thể ở cùng một độ sâu trước khi chuyển sang độ sâu tiếp theo. Nó đảm bảo tìm thấy nước đi "ngắn nhất" (ít bước nhất) để đạt được một trạng thái mong muốn.
 
 Ứng dụng: Tìm kiếm chuỗi nước đi tối thiểu để đạt được một mục tiêu cụ thể, ví dụ như tạo ra một kẹo đặc biệt hoặc phá hủy một số lượng kẹo nhất định.
+
+https://github.com/user-attachments/assets/761ba4bd-c0a5-4477-bb6a-99c5d34713c2
 
 
 **Backtracking**
@@ -97,6 +101,8 @@ Mô tả: Thuật toán này thử một chuỗi nước đi, và nếu chuỗi 
 
 Ứng dụng: Phù hợp cho các bài toán mà cần khám phá nhiều chuỗi hành động tiềm năng và đánh giá chúng, chẳng hạn như tìm kiếm nước đi combo lớn nhất.
 
+https://github.com/user-attachments/assets/c5a48b74-5d66-4a83-bae2-2f8a6513fe6a
+
 
 **AND-OR Search**
 
@@ -105,6 +111,8 @@ Loại: Tìm kiếm trong không gian trạng thái phức tạp với điều k
 Mô tả: Thuật toán này phân chia bài toán thành các nhánh con logic: nhánh AND yêu cầu tất cả các điều kiện con phải được thỏa mãn (ví dụ: tạo kẹo đặc biệt AND kích hoạt nó), trong khi nhánh OR chỉ cần một trong các điều kiện con được thỏa mãn (ví dụ: tạo kẹo sọc HOẶC tạo kẹo bọc).
 
 Ứng dụng: Xử lý các tình huống phức tạp nơi nước đi có thể dẫn đến nhiều kết quả tiềm năng phụ thuộc lẫn nhau.
+
+https://github.com/user-attachments/assets/9dc7c35a-b17b-4e74-8266-e8047c0ef859
 
 
 **Simulated Annealing**
@@ -115,6 +123,7 @@ Mô tả: Lấy cảm hứng từ quá trình tôi luyện kim loại, thuật t
 
 Ứng dụng: Tìm kiếm một nước đi tốt trong không gian giải pháp rộng lớn, đặc biệt khi có nhiều nước đi tiềm năng có thể dẫn đến kết quả tương tự.
 
+https://github.com/user-attachments/assets/7a1ef4f0-be03-4a88-ad1c-0a9d8d02fd3d
 
 **Q-Learning**
 
@@ -123,6 +132,8 @@ Loại: Học tăng cường (Reinforcement Learning).
 Mô tả: Thuật toán này cho phép AI học cách tối ưu hành động (hoán đổi kẹo) thông qua phản hồi (thưởng/phạt) từ môi trường trò chơi. AI xây dựng một "bảng Q" để lưu trữ giá trị của việc thực hiện một hành động trong một trạng thái cụ thể.
 
 Ứng dụng: Học các chiến lược chơi tối ưu qua nhiều lần thử nghiệm và lỗi, có khả năng thích nghi với các tình huống bảng kẹo khác nhau.
+
+https://github.com/user-attachments/assets/ce037e86-91ae-4c10-a215-268d9e0fdcb7
 
 ## Tài liệu tham khảo:
 
