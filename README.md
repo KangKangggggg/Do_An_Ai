@@ -124,15 +124,6 @@ Mô tả: Thuật toán này cho phép AI học cách tối ưu hành động (h
 
 Ứng dụng: Học các chiến lược chơi tối ưu qua nhiều lần thử nghiệm và lỗi, có khả năng thích nghi với các tình huống bảng kẹo khác nhau.
 
-
-**Hybrid Search**
-
-Loại: Kết hợp các thuật toán.
-
-Mô tả: Thuật toán này kết hợp sức mạnh của A* Search và Simulated Annealing. Nó có thể sử dụng A* để tìm một tập hợp các nước đi tiềm năng tốt nhất ban đầu, sau đó sử dụng Simulated Annealing để tinh chỉnh và khám phá các biến thể của những nước đi đó, giúp tránh các bẫy cục bộ và tìm ra nước đi thực sự tối ưu hơn.
-
-Ứng dụng: Cung cấp một giải pháp mạnh mẽ và linh hoạt, tận dụng lợi thế của cả tìm kiếm có thông tin và heuristic.
-
 ## Tài liệu tham khảo:
 
 1.	Pygame Documentation. Truy cập tại: https://www.pygame.org/docs/. Tài liệu chính thức của Pygame, cung cấp hướng dẫn chi tiết về cách sử dụng thư viện để phát triển giao diện, xử lý sự kiện, và tích hợp âm thanh/hình ảnh trong trò chơi Candy Crush. 
