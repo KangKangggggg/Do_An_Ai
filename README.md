@@ -71,7 +71,7 @@ Số lượt chơi: 10 lượt
 Dự án này tích hợp 7 thuật toán AI để tìm kiếm nước đi tối ưu trong trò chơi Candy Crush. Mỗi thuật toán có cách tiếp cận riêng, thể hiện sự đa dạng trong lĩnh vực trí tuệ nhân tạo:
 
 
-**A* Search**
+****A** Search**
 
 Loại: Tìm kiếm có thông tin (Informed Search).
 
