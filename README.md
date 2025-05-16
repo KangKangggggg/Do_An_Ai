@@ -1,11 +1,21 @@
 # Do_An_Ai
+# Candy Crush 
 
-Mục Tiêu
+# Nhóm thực hiện: 
+		
+STT	HỌ VÀ TÊN            	MSSV
+
+1       Huỳnh Tấn Vinh       	23110365
+
+2 	Nguyễn Phạm Bảo Trân	23110348
+
+3       Nguyễn Thị Kim Oanh  	23110372
+## Mục Tiêu
 
 Dự án Candy Crush này được xây dựng nhằm minh họa và so sánh hiệu quả của các thuật toán trí tuệ nhân tạo (AI) trong việc tìm kiếm nước đi tối ưu. Thay vì đua cá trong mê cung, người chơi và các thuật toán AI sẽ cùng tham gia vào thế giới đầy màu sắc của Candy Crush, nơi mục tiêu là đạt điểm cao, hoàn thành nhiệm vụ và vượt qua các cấp độ bằng cách thực hiện những nước đi thông minh nhất. Trò chơi không chỉ mang tính giải trí mà còn giúp người dùng trực quan hóa cách các thuật toán khác nhau phân tích và đưa ra quyết định trong một môi trường game năng động.
 
 
-Mô Tả Trò Chơi
+## Mô Tả Trò Chơi
 
 Candy Crush là một trò chơi giải đố nổi tiếng, nơi người chơi phải hoán đổi vị trí các viên kẹo liền kề để tạo thành các hàng hoặc cột gồm ba hoặc nhiều hơn các viên kẹo cùng loại. Khi một nhóm kẹo được tạo thành, chúng sẽ biến mất, tạo ra khoảng trống để các viên kẹo phía trên rơi xuống và những viên kẹo mới xuất hiện. Mục tiêu chính là đạt điểm số nhất định, phá hủy các vật cản hoặc hoàn thành các nhiệm vụ đặc biệt trong một số lượng nước đi giới hạn.
 
@@ -13,19 +23,19 @@ Candy Crush là một trò chơi giải đố nổi tiếng, nơi người chơi
 Trong dự án này, các thuật toán AI sẽ đóng vai trò là "người chơi máy", phân tích trạng thái bảng kẹo để tìm ra nước đi mang lại lợi ích cao nhất (điểm số, tạo kẹo đặc biệt, hoàn thành mục tiêu cấp độ). Điều này giúp người dùng quan sát trực tiếp hiệu suất, tốc độ và chiến lược của từng thuật toán.
 
 
-Chế Độ Chơi
+## Chế Độ Chơi
 
 Trò chơi cung cấp hai chế độ chơi chính để trải nghiệm và đánh giá các thuật toán AI:
 
 
-Chế độ Người chơi (Human Play Mode):
+**Chế độ Người chơi (Human Play Mode):**
 
 Mô tả: Trong chế độ này, người chơi sẽ tự mình tương tác với bảng kẹo, thực hiện các nước đi bằng chuột hoặc bàn phím để đạt được mục tiêu của cấp độ.
 
 Mục tiêu: Người chơi thể hiện kỹ năng và chiến lược cá nhân để vượt qua các thử thách của trò chơi.
 
 
-Chế độ AI (AI Play Mode):
+**Chế độ AI (AI Play Mode):**
 
 Mô tả: Đây là chế độ mà một hoặc nhiều thuật toán AI được kích hoạt để chơi trò chơi. Người chơi có thể quan sát cách AI phân tích bảng kẹo, đưa ra quyết định và thực hiện các nước đi một cách tự động. Chế độ này có thể bao gồm:
 
@@ -37,31 +47,33 @@ So sánh Thuật toán: Hai hoặc nhiều thuật toán AI thi đấu với nha
 
 Mục tiêu: Giúp người dùng quan sát, phân tích và so sánh hiệu quả, tốc độ, cũng như chiến lược của các thuật toán AI trong môi trường thực tế của trò chơi Candy Crush.
 
-Các Cấp Độ: Trò chơi được thiết kế với 3 cấp độ khác nhau, mỗi cấp độ có mục tiêu và thử thách riêng:
+## Các Cấp Độ: 
+Trò chơi được thiết kế với 3 cấp độ khác nhau, mỗi cấp độ có mục tiêu và thử thách riêng:
 
-Cấp độ 1:
+**Cấp độ 1:**
 
 Mục tiêu: Đạt 800 điểm
 
 Số lượt chơi: 20 lượt
 
-Cấp độ 2:
+**Cấp độ 2:**
 
 Mục tiêu: Phá hủy hết kẹo dẻo (Jelly) để qua màn.
 
 Số lượt chơi: 15 lượt
 
-Cấp độ 3:
+**Cấp độ 3:**
 
 Mục tiêu: Đạt 1200 điểm
 
 Số lượt chơi: 10 lượt
 
 
-Các Thuật Toán AI Sử Dụng Trong Dự Án: Dự án này tích hợp 7 thuật toán AI để tìm kiếm nước đi tối ưu trong trò chơi Candy Crush. Mỗi thuật toán có cách tiếp cận riêng, thể hiện sự đa dạng trong lĩnh vực trí tuệ nhân tạo:
+## Các Thuật Toán AI Sử Dụng Trong Dự Án: 
+Dự án này tích hợp 7 thuật toán AI để tìm kiếm nước đi tối ưu trong trò chơi Candy Crush. Mỗi thuật toán có cách tiếp cận riêng, thể hiện sự đa dạng trong lĩnh vực trí tuệ nhân tạo:
 
 
-A* Search
+**A* Search**
 
 Loại: Tìm kiếm có thông tin (Informed Search).
 
@@ -70,7 +82,7 @@ Mô tả: Thuật toán này tìm kiếm nước đi bằng cách cân bằng gi
 Ứng dụng: Hiệu quả trong việc tìm kiếm các nước đi tối ưu trong không gian trạng thái lớn của bảng kẹo.
 
 
-BFS Search (Breadth-First Search)
+**BFS Search (Breadth-First Search)**
 
 Loại: Tìm kiếm không có thông tin (Uninformed Search).
 
@@ -79,7 +91,7 @@ Mô tả: BFS khám phá tất cả các nước đi có thể ở cùng một �
 Ứng dụng: Tìm kiếm chuỗi nước đi tối thiểu để đạt được một mục tiêu cụ thể, ví dụ như tạo ra một kẹo đặc biệt hoặc phá hủy một số lượng kẹo nhất định.
 
 
-Backtracking
+**Backtracking**
 
 Loại: Tìm kiếm dựa trên thử và sai (Trial and Error).
 
@@ -88,7 +100,7 @@ Mô tả: Thuật toán này thử một chuỗi nước đi, và nếu chuỗi 
 Ứng dụng: Phù hợp cho các bài toán mà cần khám phá nhiều chuỗi hành động tiềm năng và đánh giá chúng, chẳng hạn như tìm kiếm nước đi combo lớn nhất.
 
 
-AND-OR Search
+**AND-OR Search**
 
 Loại: Tìm kiếm trong không gian trạng thái phức tạp với điều kiện (AND/OR).
 
@@ -97,7 +109,7 @@ Mô tả: Thuật toán này phân chia bài toán thành các nhánh con logic:
 Ứng dụng: Xử lý các tình huống phức tạp nơi nước đi có thể dẫn đến nhiều kết quả tiềm năng phụ thuộc lẫn nhau.
 
 
-Simulated Annealing
+**Simulated Annealing**
 
 Loại: Thuật toán tối ưu hóa metaheuristic.
 
@@ -106,7 +118,7 @@ Mô tả: Lấy cảm hứng từ quá trình tôi luyện kim loại, thuật t
 Ứng dụng: Tìm kiếm một nước đi tốt trong không gian giải pháp rộng lớn, đặc biệt khi có nhiều nước đi tiềm năng có thể dẫn đến kết quả tương tự.
 
 
-Q-Learning
+**Q-Learning**
 
 Loại: Học tăng cường (Reinforcement Learning).
 
@@ -115,44 +127,25 @@ Mô tả: Thuật toán này cho phép AI học cách tối ưu hành động (h
 Ứng dụng: Học các chiến lược chơi tối ưu qua nhiều lần thử nghiệm và lỗi, có khả năng thích nghi với các tình huống bảng kẹo khác nhau.
 
 
-Hybrid Search
+**Hybrid Search**
 
 Loại: Kết hợp các thuật toán.
 
 Mô tả: Thuật toán này kết hợp sức mạnh của A* Search và Simulated Annealing. Nó có thể sử dụng A* để tìm một tập hợp các nước đi tiềm năng tốt nhất ban đầu, sau đó sử dụng Simulated Annealing để tinh chỉnh và khám phá các biến thể của những nước đi đó, giúp tránh các bẫy cục bộ và tìm ra nước đi thực sự tối ưu hơn.
 
 Ứng dụng: Cung cấp một giải pháp mạnh mẽ và linh hoạt, tận dụng lợi thế của cả tìm kiếm có thông tin và heuristic.
-![image](https://github.com/user-attachments/assets/c3eeb993-61a4-4b8a-9f1e-db4922235cbc)
 
-![image](https://github.com/user-attachments/assets/81127ca1-06dd-4ba2-96d3-c9c9359de335)
+## Tài liệu tham khảo:
 
-
-
-
-
-![image](https://github.com/user-attachments/assets/6ef23999-f2b8-401c-96e1-f96859022956)
-
-
-![image](https://github.com/user-attachments/assets/bab7e06d-a27c-4d38-aa0e-ab2b0e188632)
-
-
-
-
-Tài liệu tham khảo:
 1.	Pygame Documentation. Truy cập tại: https://www.pygame.org/docs/. Tài liệu chính thức của Pygame, cung cấp hướng dẫn chi tiết về cách sử dụng thư viện để phát triển giao diện, xử lý sự kiện, và tích hợp âm thanh/hình ảnh trong trò chơi Candy Crush. 
+
 2.	Candy Crush Saga Official Website. Truy cập tại: https://www.candycrushsaga.com/. Nguồn tham khảo chính về lối chơi, thiết kế cấp độ, và các yếu tố tạo nên sức hút của trò chơi match-3 gốc, giúp nhóm tái hiện các tính năng cốt lõi trong dự án. 
+
 3.	Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to Algorithms (3rd ed.). MIT Press. Sách tham khảo về các thuật toán tìm kiếm và tối ưu, bao gồm A* và Hill Climbing, được sử dụng để triển khai AI trong trò chơi. 
 
-Hướng Dẫn Cài Đặt
+# Hướng Dẫn Cài Đặt
 Cài Python 3.x và Pygame: pip install pygame.
+
 Clone repository: git clone <repo-url>.
+
 Chạy trò chơi: python main.py.
-
-Tác giả: 
-		
-STT	HỌ VÀ TÊN            	MSSV
-1       Huỳnh Tấn Vinh       	23110365
-2 	Nguyễn Phạm Bảo Trân	23110348
-3       Nguyễn Thị Kim Oanh  	23110372
-
-
