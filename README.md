@@ -3,13 +3,11 @@
 
 # Nhóm thực hiện: 
 		
-STT	HỌ VÀ TÊN            	MSSV
+Huỳnh Tấn Vinh-23110365
 
-1       Huỳnh Tấn Vinh       	23110365
+Nguyễn Phạm Bảo Trân-23110348
 
-2 	Nguyễn Phạm Bảo Trân	23110348
-
-3       Nguyễn Thị Kim Oanh  	23110372
+Nguyễn Thị Kim Oanh-23110372
 ## Mục Tiêu
 
 Dự án Candy Crush này được xây dựng nhằm minh họa và so sánh hiệu quả của các thuật toán trí tuệ nhân tạo (AI) trong việc tìm kiếm nước đi tối ưu. Thay vì đua cá trong mê cung, người chơi và các thuật toán AI sẽ cùng tham gia vào thế giới đầy màu sắc của Candy Crush, nơi mục tiêu là đạt điểm cao, hoàn thành nhiệm vụ và vượt qua các cấp độ bằng cách thực hiện những nước đi thông minh nhất. Trò chơi không chỉ mang tính giải trí mà còn giúp người dùng trực quan hóa cách các thuật toán khác nhau phân tích và đưa ra quyết định trong một môi trường game năng động.
